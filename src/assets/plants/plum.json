@@ -1,0 +1,8 @@
+{
+    "name": "plum",
+    "states": [10, 20, 30],
+    "time": 60,
+    "cost": 50,
+    "gold": 52,
+    "xp": 1
+}

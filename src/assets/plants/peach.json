@@ -1,0 +1,8 @@
+{
+    "name": "peach",
+    "states": [30, 30, 60],
+    "time": 120,
+    "cost": 75,
+    "gold": 80,
+    "xp": 3
+}
