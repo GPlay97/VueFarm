@@ -3,8 +3,13 @@
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
         <span>VueFarm </span>
-        <span class="font-weight-light"> Simple, fun farm game</span>
+        <span class="font-weight-light hidden-xs-only"> Simple, fun farm game</span>
       </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items>
+          <v-btn flat>{{ level }}<v-icon right dark>stars</v-icon></v-btn>
+          <v-btn flat>{{ money }}<v-icon right dark>attach_money</v-icon></v-btn>
+        </v-toolbar-items>
     </v-toolbar>
 
     <v-content>
@@ -25,6 +30,14 @@ export default {
     return {
       //
     }
-  }
+  },
+  computed: {
+    money() {
+      return this.$root.money;
+    },
+    level() {
+      return this.$root.level;
+    }
+  },
 }
 </script>

@@ -25,7 +25,7 @@
             <p v-else>{{ plant.name }}</p>
           </v-list-tile-title>
           <v-list-tile-action>
-            <v-btn @click="plantField(plant)">
+            <v-btn @click="plantField(plant)" :disabled="money < plant.cost">
               {{ plant.cost  || '-' }}
               <v-icon>attach_money</v-icon>
             </v-btn>
@@ -76,6 +76,11 @@
         state: 0
       }]
     }),
+    computed: {
+      money() {
+        return this.$root.money;
+      }
+    },
     components: {
       Soil
     },
@@ -87,6 +92,7 @@
       plantField(plant) {
         this.currentField.plantField(plant.name);
         this.showPlantSelection = this.currentField = false;
+        this.$root.money -= plant.cost;
       }
     }
   }
